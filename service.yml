@@ -5,7 +5,7 @@ metadata:
   namespace: monorepo
 spec:
   selector:
-    app: frontend-deployment
+    app: challenge
   ports:
   - port: 3000
     targetPort: 80
@@ -21,7 +21,7 @@ metadata:
   namespace: monorepo
 spec:
   selector:
-    app: shopping-deployment
+    app: challenge
   ports:
   - port: 3002
     targetPort: 80
@@ -36,7 +36,7 @@ metadata:
   namespace: monorepo
 spec:
   selector:
-    app: products-deployment
+    app: challenge
   ports:
   - port: 3001
     targetPort: 80
