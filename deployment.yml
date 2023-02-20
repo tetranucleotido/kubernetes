@@ -1,0 +1,65 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend-deployment
+  namespace: monorepo
+  labels:
+    app: frontend-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: frontend-deployment
+  template:
+    metadata:
+      labels:
+        app: frontend-deployment
+    spec:
+      containers:
+      - name: frontend-cont
+        image: luxcrift/frontend:1.0.0
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: shopping-deployment
+  namespace: monorepo
+  labels:
+    app: shopping-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: shopping-deployment
+  template:
+    metadata:
+      labels:
+        app: shopping-deployment
+    spec:
+      containers:
+      - name: shopping-cont
+        image: luxcrift/shopping:1.0.0
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: products-deployment
+  namespace: monorepo
+  labels:
+    app: products-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: products-deployment
+  template:
+    metadata:
+      labels:
+        app: products-deployment
+    spec:
+      containers:
+      - name: products-cont
+        image: luxcrift/products:1.0.0
+
