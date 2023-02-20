@@ -8,7 +8,7 @@ spec:
     app: challenge
   ports:
   - port: 3000
-    targetPort: 80
+    targetPort: 31000
     nodePort: 31000
   type: NodePort
 
@@ -24,7 +24,7 @@ spec:
     app: challenge
   ports:
   - port: 3002
-    targetPort: 80
+    targetPort: 31002
     nodePort: 31002
   type: NodePort
 
@@ -39,6 +39,6 @@ spec:
     app: challenge
   ports:
   - port: 3001
-    targetPort: 80
+    targetPort: 31001
     nodePort: 31001
   type: NodePort
