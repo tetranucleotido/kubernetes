@@ -9,7 +9,7 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: challenge
+      app: frontend-deploy
   template:
     metadata:
       labels:
@@ -18,6 +18,11 @@ spec:
       containers:
       - name: frontend-cont
         image: luxcrift/frontend:1.0.0
+        env:
+          - name: PRODUCTS_SERVICE
+            value: products-service
+          - name: SHOPPING_CART_SERVICE
+            value: shopping-service
 ---
 
 apiVersion: apps/v1
@@ -31,7 +36,7 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: challenge
+      app: shopping-deploy
   template:
     metadata:
       labels:
@@ -40,11 +45,7 @@ spec:
       containers:
       - name: shopping-cont
         image: luxcrift/shopping:1.0.0
-        env:
-          - name: PRODUCTS_SERVICE
-            value: products-service
-          - name: SHOPPING_CART_SERVICE
-            value: shopping-service
+
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -52,7 +53,7 @@ metadata:
   name: products-deployment
   namespace: monorepo
   labels:
-    app: challenge
+    app: products-deploy
 spec:
   replicas: 1
   selector:
