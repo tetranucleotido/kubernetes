@@ -5,7 +5,7 @@ metadata:
   namespace: monorepo
 spec:
   selector:
-    app: challenge
+    app: frontend-deploy
   ports:
   - port: 3000
     targetPort: 3000
@@ -21,12 +21,11 @@ metadata:
   namespace: monorepo
 spec:
   selector:
-    app: challenge
+    app: shopping-deploy
   ports:
   - port: 3002
     targetPort: 3002
-    nodePort: 31002
-  type: NodePort
+
 
 ---
 apiVersion: v1
@@ -40,5 +39,3 @@ spec:
   ports:
   - port: 3001
     targetPort: 3001
-    nodePort: 31001
-  type: NodePort

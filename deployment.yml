@@ -13,7 +13,7 @@ spec:
   template:
     metadata:
       labels:
-        app: challenge
+        app: frontend-deploy
     spec:
       containers:
       - name: frontend-cont
@@ -40,7 +40,7 @@ spec:
   template:
     metadata:
       labels:
-        app: challenge
+        app: shopping-deploy
     spec:
       containers:
       - name: shopping-cont
@@ -53,7 +53,7 @@ metadata:
   name: products-deployment
   namespace: monorepo
   labels:
-    app: products-deploy
+    app: challenge
 spec:
   replicas: 1
   selector:
